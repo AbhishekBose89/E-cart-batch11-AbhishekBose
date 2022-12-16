@@ -1,0 +1,9 @@
+.icon-container{
+    display: flex;
+    align-items: center;
+}
+.flex-items{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
