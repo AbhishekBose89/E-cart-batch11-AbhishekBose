@@ -3,13 +3,12 @@ import './ProductCard.css'
 import React from 'react'
 import { addToCart } from "../../reducers/cartReducer"
 import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+
 
 const ProductCard = (props) => {
     let product = props.item;
 
     let dispatch = useDispatch()
-    let nav =useNavigate()
     
 
     const handleAddtoCart = (product) => {
@@ -24,7 +23,8 @@ const ProductCard = (props) => {
         // props.notify(cartItems.length)
 
         dispatch(addToCart(product))
-        nav("/cart",true)
+        
+
     }
     return (
         <div>
@@ -36,7 +36,7 @@ const ProductCard = (props) => {
                 <div className="card-body">
                     <h6>${product.price}</h6>
                     {/* <p className="card-text">{product.description}</p> */}
-                    <button className="btn btn-success" onClick={()=>handleAddtoCart(product)}>Add to Cart</button>
+                    <button className="btn btn-primary" onClick={()=>handleAddtoCart(product)}>Add To Cart</button>
                 </div>
             </div>
         </div>
